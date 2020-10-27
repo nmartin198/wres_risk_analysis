@@ -21,21 +21,26 @@ project.
 
 There are four top level sub-directories within the project structure.
 
-1. **data** : Holds Python scripts and a T-SQL script for processing 
+1. [**data**](https://github.com/nmartin198/wres_risk_analysis/data) : Holds 
+   Python scripts and a T-SQL script for processing 
    and formatting the data sets used in this study. The data sets
    used in this study are all publicly available at the links below.
    * [PRISM historical climate data](https://prism.oregonstate.edu/explorer/)
    * [Downscaled CMIP3 and CMIP5 Climate and Hydrology Projection](https://gdo-dcp.ucllnl.org/downscaled_cmip_projections/)
 
-2. **Jupter Notebooks**: Provides copies of Jupyter Notebooks used for
-   data processing and analysis and for simulation results processing 
-   and analysis.
+2. [**Jupter Notebooks**](https://github.com/nmartin198/wres_risk_analysis/jupyter_notebooks): 
+   Provides copies of Jupyter Notebooks used for data processing and 
+   analysis and for simulation results processing and analysis.
 
-3. **Model Inputs**: Holds a copy of the input file for the mHSP2 model 
-   used in the study. All other model inputs are included in the source 
-   code files.
+   * The file sizes for these notebooks tends to be large so you may
+     need to reload multiple times or just copy it to a local location.
 
-4. **src**: Python source code for the framework.
+3. [**Model Inputs**](https://github.com/nmartin198/wres_risk_analysis/model_inputs): 
+   Holds a copy of the input file for the mHSP2 model used in the study. 
+   All other model inputs are included in the source code files.
+
+4. [**src**](https://github.com/nmartin198/wres_risk_analysis/src): Python 
+   source code for the framework.
 
 ## Authors
 
