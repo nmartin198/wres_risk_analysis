@@ -21,7 +21,7 @@ project.
 
 There are four top level sub-directories within the project structure.
 
-1. [**data**](https://github.com/nmartin198/wres_risk_analysis/tree/main/data) : Holds 
+1. [**Data**](https://github.com/nmartin198/wres_risk_analysis/tree/main/data) : Holds 
    Python scripts and a T-SQL script for processing 
    and formatting the data sets used in this study. The data sets
    used in this study are all publicly available at the links below.
