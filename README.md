@@ -9,9 +9,9 @@ west-central Texas.
 
 This project is a scientific study of future impacts to water resources
 and is not a code-based project. The study does present a framework 
-for analysis of water resources risks from systemic changes. A site-
-specific application of this framework was implemented as part of 
-the study. The source code for this custom implementation is included 
+for analysis of water resources risks from systemic changes. A site-specific 
+application of this framework was implemented as part of the study. The 
+source code for this custom implementation is included 
 as part of this project. GitHub is used to provide open access
 to custom simulation and processing code that was used in the study. 
 There is not a 'release' or software 'product' associated with this
