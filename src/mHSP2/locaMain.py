@@ -12,28 +12,6 @@ generator framework, only. As a result, all of the coupling and queue
 logic is removed relative to **pyHS2MF6**.
 
 """
-# Copyright and License
-"""
-Copyright 2020 Nick Martin
-
-This file is part of a collection of scripts and modules in the GitHub
-repository https://github.com/nmartin198/wres_risk_analysis, hereafter
-`wres_risk_analysis`.
-
-wres_risk_analysis is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
-"""
-
 # imports for this module
 import os
 import sys
@@ -808,7 +786,7 @@ def setHRUAreas( linkdd ):
                 # this is an unrecoverable error
                 errMsg = "Issue extracting area from schematic " \
                          "link %s!!!" % str( tLink )
-                CL.LOGR.error( errMsg )
+                print( errMsg )
                 return badReturn
             # now process
             if sVolType in GoodTypes:
@@ -1001,7 +979,7 @@ def setFlowLinks( linkdd, mldd, hdfType ):
                         errMsg = "Could not convert exit and/or " \
                                     "category string %s to integers!!!" % \
                                     cSMemsb
-                        Cprint( "%s" % errMsg )
+                        print( "%s" % errMsg )
                         return badReturn
                     # if made it here then add to our list
                     if iCnt == 0:
@@ -1106,7 +1084,7 @@ def adjImpervBasin( hdfname, IIncAmount, TARG_DICT ):
     # globals
     # parameters
     goodReturn = 0
-    #badReturn = -1
+    badReturn = -1
     # locals
     PTargs = TARG_DICT[TARG_PERVLND]
     numHRU = len( PTargs )
@@ -1156,6 +1134,21 @@ def adjImpervBasin( hdfname, IIncAmount, TARG_DICT ):
         # update the dataframe
         linkDF.at[ iarInd, "AFACTR" ] = newIArea 
         linkDF.at[ parInd, "AFACTR" ] = newPArea
+        # next update the areas in the SCHEMATIC_MAP in RR
+        retStat = RR.updateSCHEMArea( pArea, newPArea )
+        if retStat != 0:
+            # this was an error
+            errMsg = "Issue setting new area %g for %s!!!" % ( newPArea, pArea )
+            print("%s" % errMsg)
+            return badReturn
+        # end if
+        retStat = RR.updateSCHEMArea( iArea, newIArea )
+        if retStat != 0:
+            # this was an error
+            errMsg = "Issue setting new area %g for %s!!!" % ( newIArea, iArea )
+            print("%s" % errMsg)
+            return badReturn
+        # end if
     # end for
     # now write the table back
     with pd.HDFStore( hdfname ) as store:

@@ -1281,6 +1281,50 @@ def addInflowMap( targID, sVolType, sVolID, aFactor, massLink ):
     return goodReturn
 
 
+def updateSCHEMArea( targID, newArea ):
+    """Update the area for a pervious or impervious target ID. This is
+    only used in the case that the watershed is allowed to evolve or
+    change during simulation time - so only used for "basin" simulations.
+
+    Args:
+        targID (str): target ID
+        newArea (float): the new area in acres
+
+    Returns:
+        int: function status; success == 0
+
+    """
+    # imports
+    # globals
+    global SCHEMATIC_MAP
+    # parameters
+    goodReturn = 0
+    badReturn = -1
+    # locals
+    FoundIt = False
+    # start
+    AllTargs = list( SCHEMATIC_MAP.keys() )
+    for tTarg in AllTargs:
+        lLists = SCHEMATIC_MAP[tTarg]
+        lCnt = 0
+        for ul in lLists:
+            sID = ul[1]
+            if sID == targID:
+                # then update the area
+                SCHEMATIC_MAP[tTarg][lCnt][4] = newArea
+                FoundIt = True
+            # end if
+            lCnt += 1
+        # end for
+    # end for
+    # check status
+    if not FoundIt:
+        return badReturn
+    # end if
+    # return
+    return goodReturn
+
+
 def makeRowFT( vol, volumeFT, depthFT, sareaFT, dischList ):
     """Make a row array representing the interpolated values
     from the FTAB for this volume

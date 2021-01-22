@@ -1,9 +1,7 @@
 # wres_risk_analysis
 
 This repository provides a collection of Python modules and Jupyter
-Notebooks for implementing a "Watershed-Scale, Probabilistic Risk 
-Assessment of Water Resources Impacts" for a specific study site in
-west-central Texas.
+Notebooks for implementing a ["Watershed-Scale, Probabilistic Risk Assessment of Water Resources Impacts from Climate Change"](https://doi.org/10.3390/w13010040) for a specific study site in west-central Texas.
 
 ## About the Project
 
@@ -44,7 +42,7 @@ There are four top level sub-directories within the project structure.
 
 ## Authors
 
-* **Nick Martin** nmartin@swri.org
+* **Nick Martin** nick.martin@stanfordalumni.org
 
 ## License
 
