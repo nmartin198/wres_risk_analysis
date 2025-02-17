@@ -1,4 +1,4 @@
-# wres_risk_analysis
+# Water Resources Future Risk Assessment from Climate Change and Land Use and Land Cover (LULC) Change
 
 This repository provides a collection of Python modules and Jupyter
 Notebooks for implementing ["Watershed-Scale, Probabilistic Risk Assessment of Water Resources Impacts from Climate Change"](https://doi.org/10.3390/w13010040) and ["Risk Assessment of Future Climate and Land Use/Land Cover Change Impacts on Water Resources"](https://doi.org/10.3390/hydrology8010038) for a specific study site in west-central Texas.
@@ -52,10 +52,8 @@ There are four top level sub-directories within the project structure.
 ## Authors
 
 * Nick Martin <img src="ORCIDiD_iconvector.svg" alt="ORCID" width="16" height="16" /><a href="https://orcid.org/0000-0002-6432-7390">https://orcid.org/0000-0002-6432-7390</a>
-   - nmartin@swri.org
-   - nick.martin@stanfordalumni.org
+   - nick.martin@alumni.stanford.edu
 
-   
 
 ## License
 
